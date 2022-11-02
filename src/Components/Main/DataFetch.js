@@ -1,11 +1,12 @@
 import React,{useEffect, useState} from "react";
 import { client } from "../../client";
 import DataSearch from "./DataSearch";
-
+import Element from "./Elements";
 
  export default function DataFetch(){
 
     const [rezepte,setRezepte] = useState([])
+    const [rezeptImage,setRezeptImage] =useState([])
 
 
 
@@ -17,7 +18,11 @@ import DataSearch from "./DataSearch";
             content_type: 'recipes'
         })
         .then((entry)=>{
-        console.log(entry)
+
+   
+     
+
+  
         const recipefield = entry.items
         setRezepte({
             recipefield
@@ -27,7 +32,8 @@ import DataSearch from "./DataSearch";
     }
     
     
-    
+   
+
    
     
 
@@ -37,15 +43,15 @@ import DataSearch from "./DataSearch";
         
     },[])
   
-
+ 
   
   
-    console.log(rezepte.recipefield)
+    
     
     
     
     return(
-      <DataSearch rezepte={rezepte}/>
+      <DataSearch rezepte={rezepte} />
     )
 
  }
