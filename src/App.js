@@ -1,11 +1,12 @@
-
 import './App.css';
-import DataFetch from './Components/Main/DataFetch';
+import Header from './Components/Header'
+import Footer from './Components/Footer'
 
 function App() {
   return (
     <div className="App">
-      <DataFetch />
+      <Header />
+      <Footer />     
     </div>
   );
 }
