@@ -12,7 +12,7 @@ export default function DataSearch({rezepte}){
     
     
    return(
-   <div>
+   <div className="d-flex flex-column">
      {dataMap}
      </div>
 

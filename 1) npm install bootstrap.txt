@@ -1,0 +1,5 @@
+1) npm install bootstrap
+2) App.scss erstellen
+3) Variables.scss rüber kopieren bzw. vorhererstellen
+4) Theme.scss erstellen
+5) package.json alles zusammen bauen "sass ./App.scss ./App.css --no-source-map"
