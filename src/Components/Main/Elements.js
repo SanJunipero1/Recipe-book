@@ -28,7 +28,7 @@ export default function Element({title,rating,image,preparationTime,description,
   const linkId= `/recipes/${id}`
     return(
         
-      <div className="card m-auto"  style={{width: "306px"}}>
+      <div className="card m-auto"  style={{width: "306px", height: "488px"}}>
     <img src={`https:${image}`} className="card-img-top" style={{height: "13rem"}} alt="..."/>
    <div  className="card-body">
         <p>{category}</p>
@@ -38,8 +38,9 @@ export default function Element({title,rating,image,preparationTime,description,
       <p>Sterne: {star} </p>         
       <p >{timeIcon} {preparationTime} min.</p>
       </div>
-      <a href={linkId} className="btn btn-primary d-flex justify-content-center   " style={{}}>Zum Rezept</a>
+      <a href={linkId} className="btn btn-primary d-flex justify-content-center   " style={{width:"306px"}}>Zum Rezept</a>
     </div>
+    
    </div>
 
 
