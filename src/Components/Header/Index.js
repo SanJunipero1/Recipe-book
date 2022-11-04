@@ -2,6 +2,7 @@ import React from 'react'
 
 function Header() {
     return (
+      
         <nav className="navbar navbar-expand-md navbar-dark bg-primary" aria-label="Fourth navbar example">
             <div className="container-md">
             <a className="navbar-brand" href="/">MyDailyReceipe</a>
@@ -51,6 +52,9 @@ function Header() {
             </div>
             </div>
         </nav>
+
+
+     
     )
 }
 
