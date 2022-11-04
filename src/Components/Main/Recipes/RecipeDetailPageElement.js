@@ -2,7 +2,25 @@ import React from "react";
 import { useNavigate } from 'react-router-dom';
 
 export default function RecipeDetailPageElement({title,preparation,image}){
-    console.log(preparation)
+    console.log(preparation.content)
+    
+    
+    preparation.content.map((item)=>{
+        console.log(item.content)
+       // item.content.map((x)=>{
+       //     return <p>{x.content.value}</p>
+            
+       // })
+        
+        
+
+        
+    })
+    
+    
+    
+    
+    
     
     const navigate = useNavigate()
     

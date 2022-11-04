@@ -35,7 +35,7 @@ export default function Element({title,rating,image,preparationTime,description,
       <h5 className="card-title">{title}</h5>
       <p style={{height: "10rem"}} className="card-text" >{description}</p>
       <div className="d-flex justify-content-between">
-      <p>Sterne: {star} </p>         
+      <p>{star} </p>         
       <p >{timeIcon} {preparationTime} min.</p>
       </div>
       <a href={linkId} className="btn btn-primary d-flex justify-content-center   ">Zum Rezept</a>
