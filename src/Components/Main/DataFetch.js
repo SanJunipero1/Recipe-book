@@ -10,51 +10,35 @@ import { useNavigate } from "react-router-dom";
 export default function DataFetch(){
   const navigate = useNavigate()
     const [rezepte,setRezepte] = useState([])
-    
-
     const [searchValue, setSearchValue] = useState("")
     const [currentPage,setCurrentPage] =useState(1)
     const [postsPerPage,setPostsPerPage] = useState(4)
     const [random,setRandom]=useState()
     const [random2,setRandom2]=useState()
 
-   
+    // console.log(searchValue)
 
-  console.log(searchValue)
+    function fetchRecipes(){
 
-  function fetchRecipes(){
-    
-       client.getEntries({
-            content_type: 'recipes'
+        client.getEntries({
+          content_type: 'recipes'
         })
         .then((entry)=>{
 
-      const recipefield = entry.items
-        
+        const recipefield = entry.items
         setRezepte({
-            recipefield
+          recipefield
         })
-        })
-    
+      })
+
     }
-    
-    
-   
-
-   
-    
-
     
      useEffect(()=>{
        fetchRecipes()
         
     },[])
    
-   
     const recipeArray = rezepte.recipefield
-    
-    console.log(recipeArray)
-    
 
     function zufall(){
       const randomRecipe =  Math.floor(Math.random() * recipeArray.length)
@@ -65,7 +49,6 @@ export default function DataFetch(){
    
     }
 
- 
      if(random){
       return(
         <div>
@@ -87,25 +70,19 @@ export default function DataFetch(){
       )
      }
 
-
-
-
-
-
-  
     if(searchValue && recipeArray){ 
       return(
-        <div>
-    <div className="d-flex">   
-    {recipeArray.filter(  (rezept )=> rezept.fields.category == searchValue ).map((items) =>{
-       return (
-        <Element  key={items.sys.id} title={items.fields.title} rating={items.fields.rating} image={items.fields.headerImage.fields.file.url} 
-        preparationTime={items.fields.preparationTime} description={items.fields.description}    category={items.fields.category}  id={items.sys.id}/>  
-       );
-    })}
-</div>
-</div>
-       
+        <div class="asdasdasdasd">
+            <div className="d-flex">   
+              {recipeArray.filter(  (rezept )=> rezept.fields.category == searchValue ).map((items) =>{
+                return (
+                  <Element  key={items.sys.id} title={items.fields.title} rating={items.fields.rating} image={items.fields.headerImage.fields.file.url} 
+                  preparationTime={items.fields.preparationTime} description={items.fields.description}    category={items.fields.category}  id={items.sys.id}/>  
+                );
+              })}
+            </div>
+        </div>
+
       )
     }
 
@@ -120,19 +97,14 @@ export default function DataFetch(){
     
       return(
         
-        <div>
-          <Search setSearchValue={setSearchValue}/>
-          <Category/>
-          <DataSearch rezepte={currentPosts} />
-        <Pagination totalPosts={recipeArray.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/>
-    
-        <button className="btn btn-primary " onClick={zufall}>Zufallsrezept</button>
-   
-       
-        </div>
-        
-   
-        
+        <>
+            <Search setSearchValue={setSearchValue}/>
+            <Category/>
+            <DataSearch rezepte={currentPosts} />
+            <Pagination totalPosts={recipeArray.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/>
+            <button className="btn btn-primary " onClick={zufall}>Zufallsrezept</button>
+        </>
+      
       )
 
     }
