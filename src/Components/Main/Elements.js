@@ -28,7 +28,8 @@ export default function Element({title,rating,image,preparationTime,description,
   const linkId= `/recipes/${id}`
     return(
         
-      <div className="card m-auto"  style={{width: "306px", height: "488px"}}>
+      <div className="col-md-3">
+      <div className="card m-auto"  style={{height: "488px"}}>
     <img src={`https:${image}`} className="card-img-top" style={{height: "13rem"}} alt="..."/>
    <div  className="card-body">
         <p>{category}</p>
@@ -42,7 +43,7 @@ export default function Element({title,rating,image,preparationTime,description,
     </div>
     
    </div>
-
+   </div>
 
    
 

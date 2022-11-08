@@ -97,13 +97,17 @@ export default function DataFetch(){
     
       return(
         
-        <>
-            <Search setSearchValue={setSearchValue}/>
-            <Category/>
-            <DataSearch rezepte={currentPosts} />
-            <Pagination totalPosts={recipeArray.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/>
-            <button className="btn btn-primary " onClick={zufall}>Zufallsrezept</button>
-        </>
+        <div className="container">
+			<div className="row">
+				<div className="col">
+					<Search setSearchValue={setSearchValue}/>
+					<Category/>
+					<DataSearch rezepte={currentPosts} />
+					<Pagination totalPosts={recipeArray.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/>
+					<button className="btn btn-primary " onClick={zufall}>Zufallsrezept</button>
+				</div>
+			</div>
+        </div>
       
       )
 
