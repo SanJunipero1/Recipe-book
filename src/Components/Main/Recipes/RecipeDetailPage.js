@@ -2,6 +2,7 @@ import React,{useEffect, useState} from "react";
 import { useParams, Link } from "react-router-dom";
 import { client } from "../../../client";
 import RecipeDetailPageElement from "./RecipeDetailPageElement";
+import Layout from "../../Layout";
 
 
 
@@ -49,9 +50,11 @@ export default function RecipeDetailPage(){
                 {recipeArray.filter(  (rezept )=> rezept.sys.id === rezeptParamId ).map((items) =>{
                    console.log(items)
                    return (
+                    <Layout>
                    <RecipeDetailPageElement key={items.sys.id} title={items.fields.title} preparation={items.fields.preparation}
-                   image={items.fields.headerImage.fields.file.url} />
-                      
+                   image={items.fields.headerImage.fields.file.url} preparationTime={items.fields.preparationTime} 
+                   ingredients={items.fields.Ingredients}/>
+                      </Layout>
                     );
                 })}
             </>

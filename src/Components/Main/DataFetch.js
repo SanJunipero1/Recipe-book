@@ -4,8 +4,13 @@ import DataSearch from "./DataSearch";
 import Element from "./Elements";
 import Pagination from "./Pagination";
 import Category from "./Category/Index";
-import Search from "../Header/Search";
+import Search from "../Search/Search";
 import { useNavigate } from "react-router-dom";
+import Modal from "./Recipes/Modal";
+import ModalElement from "./Recipes/ModalElement";
+import Layout from "../Layout";
+
+
 
 export default function DataFetch(){
   const navigate = useNavigate()
@@ -13,10 +18,15 @@ export default function DataFetch(){
     const [searchValue, setSearchValue] = useState("")
     const [currentPage,setCurrentPage] =useState(1)
     const [postsPerPage,setPostsPerPage] = useState(4)
-    const [random,setRandom]=useState()
+    const [random,setRandom]=useState(0)
     const [random2,setRandom2]=useState()
 
+    const [openModal,setOpenModal]= useState(false)
+   
+
+
     // console.log(searchValue)
+
 
     function fetchRecipes(){
 
@@ -33,6 +43,15 @@ export default function DataFetch(){
 
     }
     
+
+    //<Modal open={openModal} random={random} recipeArray={recipeArray}/>
+   
+
+   
+    
+
+    
+
      useEffect(()=>{
        fetchRecipes()
         
@@ -41,6 +60,7 @@ export default function DataFetch(){
     const recipeArray = rezepte.recipefield
 
     function zufall(){
+      setOpenModal(true)
       const randomRecipe =  Math.floor(Math.random() * recipeArray.length)
       const randomRecipe2 =  Math.floor(Math.random() * recipeArray.length)
      console.log(recipeArray[randomRecipe].fields.title)
@@ -49,26 +69,49 @@ export default function DataFetch(){
    
     }
 
-     if(random){
-      return(
-        <div>
-           <Search setSearchValue={setSearchValue}/>
-          <Category/>
-          <div className="d-flex">
-        <Element key={recipeArray[random].sys.id} title={recipeArray[random].fields.title} rating={recipeArray[random].fields.rating} image={recipeArray[random].fields.headerImage.fields.file.url} 
-        preparationTime={recipeArray[random].fields.preparationTime} description={recipeArray[random].fields.description}    category={recipeArray[random].fields.category}  id={recipeArray[random].sys.id}/>
-        <Element key={recipeArray[random2].sys.id} title={recipeArray[random2].fields.title} rating={recipeArray[random2].fields.rating} image={recipeArray[random2].fields.headerImage.fields.file.url} 
-        preparationTime={recipeArray[random2].fields.preparationTime} description={recipeArray[random2].fields.description}    category={recipeArray[random2].fields.category}  id={recipeArray[random2].sys.id}/>
-        </div>
+
+    function modal(){ 
+      const randomRecipe =  Math.floor(Math.random() * recipeArray.length)
+      setRandom(randomRecipe)
+      
+      setOpenModal(true)
+    }
+
+
+    //<Element key={recipeArray[random2].sys.id} title={recipeArray[random2].fields.title} rating={recipeArray[random2].fields.rating} image={recipeArray[random2].fields.headerImage.fields.file.url} 
+    //preparationTime={recipeArray[random2].fields.preparationTime} description={recipeArray[random2].fields.description}    category={recipeArray[random2].fields.category}  id={recipeArray[random2].sys.id}/>
+
+
+
+ 
+   // if(random){
+
+    //  const lastPostIndex= currentPage * postsPerPage
+   //   const firstPostIndex = lastPostIndex - postsPerPage
+   //   const currentPosts =  recipeArray.slice(firstPostIndex,lastPostIndex)
+   //   return(
+   ///    <div>
+   //     <Search setSearchValue={setSearchValue}/>
+   //    <Category/>
+    //   <DataSearch rezepte={currentPosts} />
+    //   <Pagination totalPosts={recipeArray.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/>
+    //      <div >
+   //   <Element key={recipeArray[random].sys.id} title={recipeArray[random].fields.title} rating={recipeArray[random].fields.rating} image={recipeArray[random].fields.headerImage.fields.file.url} 
+   //  preparationTime={recipeArray[random].fields.preparationTime} description={recipeArray[random].fields.description}    category={recipeArray[random].fields.category}  id={recipeArray[random].sys.id}/>
+       
+   //    </div>
     
-    <button className="btn btn-primary " onClick={zufall}>Zufallsrezept</button>
-        
-        
-        
-        
-        </div>
-      )
-     }
+   // <button className="btn btn-primary " onClick={zufall}>Zufallsrezept</button>
+   //     </div>
+    // )
+    // }
+
+
+     
+
+
+
+  
 
     if(searchValue && recipeArray){ 
       return(
@@ -85,9 +128,20 @@ export default function DataFetch(){
 
       )
     }
+   // <div style={{height: '500px', backgroundColor: 'black',width: '500px'}}>
+   // <Element key={recipeArray[random].sys.id} title={recipeArray[random].fields.title} rating={recipeArray[random].fields.rating} image={recipeArray[random].fields.headerImage.fields.file.url} 
+   // preparationTime={recipeArray[random].fields.preparationTime} description={recipeArray[random].fields.description}    category={recipeArray[random].fields.category}  id={recipeArray[random].sys.id}/>
+  // </div>
 
 
-    
+//<button className="btn btn-primary " onClick={zufall}>Zufallsrezept</button>    
+  
+
+
+
+
+    console.log(random)
+
     
     if(recipeArray){
       const lastPostIndex= currentPage * postsPerPage
@@ -95,20 +149,27 @@ export default function DataFetch(){
       const currentPosts =  recipeArray.slice(firstPostIndex,lastPostIndex)
      
     
-      return(
-        
-        <div className="container">
-			<div className="row">
-				<div className="col">
-					<Search setSearchValue={setSearchValue}/>
-					<Category/>
-					<DataSearch rezepte={currentPosts}/>
-					<Pagination totalPosts={recipeArray.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/>
-					<button className="btn btn-primary " onClick={zufall}>Zufallsrezept</button>
-				</div>
-			</div>
+
+      return (
+        <Layout>
+        <div style={{width: "80%",margin:"auto"}}>
+          <Modal open={openModal} onClose={()=>setOpenModal(false)}>
+          <h2>Wir wär's damit?</h2>
+          <ModalElement key={recipeArray[random].sys.id} title={recipeArray[random].fields.title} rating={recipeArray[random].fields.rating} image={recipeArray[random].fields.headerImage.fields.file.url} 
+   preparationTime={recipeArray[random].fields.preparationTime} description={recipeArray[random].fields.description}    category={recipeArray[random].fields.category}  id={recipeArray[random].sys.id}/>
+        </Modal>
+          <Category/>
+          <DataSearch rezepte={currentPosts} />
+          <div className="d-flex m-2">
+        <Pagination totalPosts={recipeArray.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/>
+        <button className="btn btn-primary text-light" onClick={zufall}>Keine Idee?</button>
         </div>
-      
+       
+    </div>
+    </Layout>
+
+   
+        
       )
 
     }

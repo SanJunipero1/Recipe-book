@@ -8,7 +8,7 @@ export default function ElementCategory({image,category,description,link}){
   <div className="card-body">
     <h5 className="card-title">{category}</h5>
     <p className="card-text">{description}</p>
-    <a href={link} className="btn btn-primary">Zu den {category}</a>
+    <a href={link} className="btn btn-primary text-light">Zu den {category}</a>
   </div>
 </div>
     )

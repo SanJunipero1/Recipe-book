@@ -5,6 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import { client } from "../../../client";
 import RecipeDetailPageElement from "./RecipeDetailPageElement";
 import Element from "../Elements";
+import Layout from "../../Layout";
 
 
 
@@ -62,11 +63,11 @@ export default function Category(){
                 {recipeArray.filter(  (rezept )=> rezept.fields.category == rezeptParamId ).map((items) =>{
                    
                    return (
-                    
-                    
+                   
+                 
                     <Element  key={items.sys.id} title={items.fields.title} rating={items.fields.rating} image={items.fields.headerImage.fields.file.url} 
                     preparationTime={items.fields.preparationTime} description={items.fields.description}    category={items.fields.category}  id={items.sys.id}/>
-                     
+                    
                    );
                 })}
             </div>
