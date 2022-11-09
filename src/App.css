@@ -115,20 +115,20 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 }
 
 h1, .h1 {
-  font-size: calc(1.375rem + 1.5vw);
+  font-size: calc(1.325rem + 0.9vw);
 }
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
 h2, .h2 {
-  font-size: calc(1.325rem + 0.9vw);
+  font-size: calc(1.3rem + 0.6vw);
 }
 @media (min-width: 1200px) {
   h2, .h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 }
 
@@ -7925,11 +7925,11 @@ textarea.form-control-lg {
 }
 
 .fs-1 {
-  font-size: calc(1.375rem + 1.5vw) !important;
+  font-size: calc(1.325rem + 0.9vw) !important;
 }
 
 .fs-2 {
-  font-size: calc(1.325rem + 0.9vw) !important;
+  font-size: calc(1.3rem + 0.6vw) !important;
 }
 
 .fs-3 {
@@ -10788,10 +10788,10 @@ textarea.form-control-lg {
 }
 @media (min-width: 1200px) {
   .fs-1 {
-    font-size: 2.5rem !important;
+    font-size: 2rem !important;
   }
   .fs-2 {
-    font-size: 2rem !important;
+    font-size: 1.75rem !important;
   }
   .fs-3 {
     font-size: 1.75rem !important;
@@ -10835,5 +10835,19 @@ textarea.form-control-lg {
 .App-receipe-search {
   background: url("./static/images/Background-Receipe-Search.jpg") top center;
   background-size: cover;
-  height: 280px;
+  height: 300px;
+}
+
+.wrap-receipe-search {
+  margin-top: 120px;
+}
+
+.frontpage-receipe-category {
+  margin-top: 1rem;
+}
+.frontpage-receipe-category img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
 }
