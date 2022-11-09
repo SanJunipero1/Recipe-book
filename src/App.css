@@ -10832,6 +10832,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.irgendwas {
-  color: aqua;
+.App-receipe-search {
+  background: url("./static/images/Background-Receipe-Search.jpg") top center;
+  background-size: cover;
+  height: 280px;
 }
