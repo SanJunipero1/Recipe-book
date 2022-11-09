@@ -102,7 +102,7 @@ export default function DataFetch(){
 				<div className="col">
 					<Search setSearchValue={setSearchValue}/>
 					<Category/>
-					<DataSearch rezepte={currentPosts} />
+					<DataSearch rezepte={currentPosts}/>
 					<Pagination totalPosts={recipeArray.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/>
 					<button className="btn btn-primary " onClick={zufall}>Zufallsrezept</button>
 				</div>
