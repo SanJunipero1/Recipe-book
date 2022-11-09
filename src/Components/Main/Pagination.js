@@ -13,7 +13,7 @@ export default function Pagination({totalPosts, postsPerPage,setCurrentPage}){
         <div className="m-auto">
         {
             pages.map((page,index) =>{
-                return <button className="btn btn-primary m-1" onClick={()=>setCurrentPage(page)} key={index}>{page}</button>
+                return <button className="btn btn-primary m-1 text-light" onClick={()=>setCurrentPage(page)} key={index}>{page}</button>
             })
         }
         </div>

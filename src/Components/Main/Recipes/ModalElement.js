@@ -1,13 +1,12 @@
 import React,{useEffect, useState} from "react";
-import { client } from "../../client";
-import DataSearch from "./DataSearch";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 import { faStar,faClock } from '@fortawesome/free-solid-svg-icons';
 
 
-export default function Element({title,rating,image,preparationTime,description,category,id}){
+export default function ModalElement({title,rating,image,preparationTime,description,category,id}){
     
   const starIcon = <FontAwesomeIcon icon={faStar} style={{color:"#DEE13A"}}/>
   const timeIcon =<FontAwesomeIcon icon={faClock} />
@@ -28,8 +27,8 @@ export default function Element({title,rating,image,preparationTime,description,
   const linkId= `/recipes/${id}`
     return(
         
-      <div className="card m-5"  style={{width: "20rem"}}>
-    <img src={`https:${image}`} className="card-img-top" style={{height: "13rem"}} alt="..."/>
+      <div className="card m-auto"  style={{width: "30rem"}}>
+    <img src={`https:${image}`} className="card-img-top" style={{height: "20rem"}} alt="..."/>
    <div  className="card-body">
         <p>{category}</p>
       <h5 className="card-title">{title}</h5>
