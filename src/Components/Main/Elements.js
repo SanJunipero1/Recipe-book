@@ -28,13 +28,13 @@ export default function Element({title,rating,image,preparationTime,description,
   const linkId= `/recipes/${id}`
     return(
         
-      <div className="col-md-3 col-sm-12">
-          <div className="card mx-2 rounded border-0"  style={{height: "488px"}}>
-              <img src={`https:${image}`} className="card-img-top " style={{height: "13rem"}} alt="..."/>
-              <div  className="card-body ">
-                  <p className="text-muted">{category}</p>
-                  <h5 className="card-title">{title}</h5>
-                  <p style={{height: "10rem"}} className="card-text" >{description}</p>
+      <div className="col-sm-6 col-md-3">
+          <div className="receipe-card">
+              <img src={`https:${image}`} className="rounded img-fluid" alt="receipe-image"/>
+              <div  className="receipe-body">
+                  <h3 className="receipe-category">{category}</h3>
+                  <h2 className="receipe-title">{title}</h2>
+                  <p className="receipe-description">{description}</p>
                   <div className="d-flex justify-content-between">
                       <p>{star} </p>         
                       <p >{timeIcon} {preparationTime} min.</p>

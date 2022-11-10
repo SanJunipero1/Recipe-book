@@ -36,7 +36,7 @@ export default function Search ({setSearchValue}){
                 <i className="fas fa-search"></i>
             </button>
         </div>
-        </div>
+       
                    
     )
 }

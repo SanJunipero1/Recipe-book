@@ -1,0 +1,50 @@
+body:after {
+    content: "";
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 1.125rem;
+    font-size: 2rem;
+    color: $gray-800;
+    font-weight: bold;
+}
+
+@include media-breakpoint-up(sm) {
+    body:after {
+        background: red;
+        content: "SM"
+    }
+}
+
+@include media-breakpoint-up(md) {
+    body:after {
+        background: green;
+        content: "MD"
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    body:after {
+        background: yellow;
+        content: "LG"
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    body:after {
+        background: blueviolet;
+        content: "XL"
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    body:after {
+        background: aqua;
+        content: "XXL"
+    }
+}
