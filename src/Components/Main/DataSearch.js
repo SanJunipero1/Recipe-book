@@ -13,9 +13,9 @@ export default function DataSearch({rezepte}){
     
     
    return(
-   <div className="d-flex ">
+   <div className="row">
      {dataMap}
-     </div>
+   </div>
 
     )
 }

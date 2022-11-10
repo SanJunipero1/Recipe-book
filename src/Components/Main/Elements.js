@@ -28,20 +28,21 @@ export default function Element({title,rating,image,preparationTime,description,
   const linkId= `/recipes/${id}`
     return(
         
-      <div className="card m-5"  style={{width: "20rem"}}>
-    <img src={`https:${image}`} className="card-img-top" style={{height: "13rem"}} alt="..."/>
-   <div  className="card-body">
-        <p>{category}</p>
-      <h5 className="card-title">{title}</h5>
-      <p style={{height: "10rem"}} className="card-text" >{description}</p>
-      <div className="d-flex justify-content-between">
-      <p>{star} </p>         
-      <p >{timeIcon} {preparationTime} min.</p>
+      <div className="col-sm-6 col-md-3">
+          <div className="receipe-card">
+              <img src={`https:${image}`} className="rounded img-fluid" alt="receipe-image"/>
+              <div  className="receipe-body">
+                  <h3 className="receipe-category">{category}</h3>
+                  <h2 className="receipe-title">{title}</h2>
+                  <p className="receipe-description">{description}</p>
+                  <div className="d-flex justify-content-between">
+                      <p>{star} </p>         
+                      <p >{timeIcon} {preparationTime} min.</p>
+                  </div>
+                  <a href={linkId} className="btn btn-primary d-flex justify-content-center w-100 text-white">Zum Rezept</a>
+              </div>
+          </div>
       </div>
-      <a href={linkId} className="btn btn-primary d-flex justify-content-center  text-light ">Zum Rezept</a>
-    </div>
-   </div>
-
 
    
 
