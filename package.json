@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "bootstrap-style": "sass ./src/App.scss ./src/App.css --no-source-map"
+    "bootstrap-style": "sass ./src/App.scss ./src/App.css --no-source-map --watch"
   },
   "eslintConfig": {
     "extends": [

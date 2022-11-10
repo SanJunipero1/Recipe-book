@@ -26,10 +26,10 @@ export default function Category(){
 
 
     return(
-        <div className="d-flex justify-content-between">
+        <>
         <ElementCategory image={imageVor} category={categoryVor} description={descVor} link={linkV}/>
         <ElementCategory image={imageHaupt} category={categoryHaupt} description={descHaupt} link={linkH}/>
         <ElementCategory image={imageNach} category={categoryNach} description={descNach} link={linkN}/>
-        </div>
+        </>
     )
 }
