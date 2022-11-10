@@ -8,6 +8,7 @@ import Category from './Components/Main/Recipes/Category';
 
 function App() {
   return (
+
 	<div className="App">
 		<Routes>
 			<Route path="/" element={<DataFetch/> } />
@@ -21,6 +22,7 @@ function App() {
 			</Route>
 		</Routes>
 	</div>
+
   );
 }
 

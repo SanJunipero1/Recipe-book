@@ -115,6 +115,7 @@ export default function DataFetch(){
 
     if(searchValue && recipeArray){ 
       return(
+        <Layout>
         <div class="asdasdasdasd">
             <div className="d-flex">   
               {recipeArray.filter(  (rezept )=> rezept.fields.category == searchValue ).map((items) =>{
@@ -125,7 +126,7 @@ export default function DataFetch(){
               })}
             </div>
         </div>
-
+        </Layout>
       )
     }
    // <div style={{height: '500px', backgroundColor: 'black',width: '500px'}}>
@@ -151,11 +152,22 @@ export default function DataFetch(){
     
 
       return (
-        <Layout>
+
+        <Layout setSearchValue={setSearchValue}>
+       
+          <Modal open={openModal} onClose={()=>setOpenModal(false)}>
+          <h2>Wir wär's damit?</h2>
+          <ModalElement key={recipeArray[random].sys.id} title={recipeArray[random].fields.title} rating={recipeArray[random].fields.rating} image={recipeArray[random].fields.headerImage.fields.file.url} 
+   preparationTime={recipeArray[random].fields.preparationTime} description={recipeArray[random].fields.description}    category={recipeArray[random].fields.category}  id={recipeArray[random].sys.id}/>
+        </Modal>
+          
+
+   
         <div className="container">
-          <div className="row">
-            <Category/>
-          </div>
+			<div className="row">
+				<Category/>
+			</div>
+
           <DataSearch rezepte={currentPosts} />
           <div className="row">
             <Pagination totalPosts={recipeArray.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/>
