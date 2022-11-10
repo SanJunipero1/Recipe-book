@@ -152,19 +152,33 @@ export default function DataFetch(){
     
 
       return (
+
         <Layout setSearchValue={setSearchValue}>
-        <div style={{width: "80%",margin:"auto"}}>
+       
           <Modal open={openModal} onClose={()=>setOpenModal(false)}>
           <h2>Wir wär's damit?</h2>
           <ModalElement key={recipeArray[random].sys.id} title={recipeArray[random].fields.title} rating={recipeArray[random].fields.rating} image={recipeArray[random].fields.headerImage.fields.file.url} 
    preparationTime={recipeArray[random].fields.preparationTime} description={recipeArray[random].fields.description}    category={recipeArray[random].fields.category}  id={recipeArray[random].sys.id}/>
         </Modal>
-          <Category/>
+          
+
+   
+        <div className="container">
+			<div className="row">
+				<Category/>
+			</div>
+
           <DataSearch rezepte={currentPosts} />
           <div className="d-flex m-2">
         <Pagination totalPosts={recipeArray.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/>
         <button className="btn btn-primary text-light" onClick={zufall}>Keine Idee?</button>
-        </div>
+            <Modal open={openModal} onClose={()=>setOpenModal(false)}>
+            <h2>Wir wär's damit?</h2>
+            <ModalElement key={recipeArray[random].sys.id} title={recipeArray[random].fields.title} rating={recipeArray[random].fields.rating} image={recipeArray[random].fields.headerImage.fields.file.url} 
+    preparationTime={recipeArray[random].fields.preparationTime} description={recipeArray[random].fields.description}    category={recipeArray[random].fields.category}  id={recipeArray[random].sys.id}/>
+          </Modal>
+        
+		</div>
        
     </div>
     </Layout>
