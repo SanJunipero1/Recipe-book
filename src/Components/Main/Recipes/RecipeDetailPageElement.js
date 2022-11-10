@@ -1,38 +1,218 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
+
 import Layout from "../../Layout";
 
 export default function RecipeDetailPageElement({title,preparation,image,ingredients,preparationTime}){
     
-    const ing =(ingredients)
+  const navigate = useNavigate()
+    const [person,setPerson]=useState(1)
+    const [amountCalc,setCalcAmount]=useState([])
     const desc =preparation.content[0].content[0].value
-    
+    const amount=[]
+    const ingCalc = []
+    const ingX =[]
+    const ingredientsOb=[]
+
+
+
 
     
     
   
-    const zutatsliste = ingredients.map((item)=>{
-      console.log(item)
-      return  <tr>
-              <td class="p-3">{item.fields.amount} {item.fields.unit}</td>
-              <td>{item.fields.ingredient}</td>
-            </tr>
+  
+    
+    function calculatorPlus(){
+      setPerson(zahl=> zahl+1)
+      setCalcAmount( amount.map(function(x) { return x * (person +1 ); }))
      
-        
+      
+      
+      
+   
+    }
+
+    function calculatorMinus(){
+      if(person > 1){
+        setPerson(zahl=> zahl-1)
+        setCalcAmount( amount.map(function(x) { return x * (person -1); }))
+      }
+      
+    }
+
+
+    const amountCalcMap = amountCalc.map((item)=>{
+      return <p>{item}</p>
+    })
+
+ 
+
+
+   const zutatsliste = ingredients.map((item)=>{
+    ingX.push(item.fields.unit)
+    ingredientsOb.push(item.fields.ingredient)
+    amount.push(item.fields.amount)
+
+
+    return <tr>
+            
+      <td class="p-3"> {item.fields.amount} {item.fields.unit}</td>
+         <td>{item.fields.ingredient}</td>
+       </tr>
+              
+             
+            
+            
+   
+ 
       
     })
+
+    const calcobject =Object.assign({}, amountCalc)
+    const ingobject = Object.assign({}, ingX)
+    const ingobject2 = Object.assign({}, ingredientsOb)
+    
+
+    ingCalc.push(calcobject)
+    ingCalc.push(ingobject)
+    ingCalc.push(ingobject2)
+
+    
+    
+    console.log(ingredients)
+    console.log(ingCalc)
+  const unit = ingCalc.map((item,index)=>{
+            
+    return(    
+        <tr className="">
+     <td className="p-3 ">{item[0]}</td>
+
+
+    </tr>
+      ) 
+   
+  })
+
+
+
+
+
+    
+   
+
+
+
+
+
+
+
+
+    if(person > 1 && amount){
+
+      
+      
+      return(
+        <>
+        <div>
+
+       
+       
+        </div>
+        
+          <div class="container ">
+          <div class="row d-flex justify-content-center m-2 ">
+            <div class="col-md-8 col-sm-12 bg-white border border-opacity-25 rounded">
+              <h2 class="d-flex justify-content-center p-3">{title}</h2>
+            </div>
+          </div>
+      
+          <div  class="row d-flex justify-content-center ">
+            <div class="col-md-8 col-sm-12" >
+              <img src={`https:${image}`}
+            class="img-fluid img-responsive img-thumbnail"
+            alt="Responsice image"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title={title}
+          />
+            </div>
+          </div>
+      
+        </div>
+      
+  
+        <div class="container mt-4">
+          <div class="row">
+            <div class="col border border-opacity-25 rounded p-4 bg-white">
+              <p>
+          
+              </p>
+      
+              
+            </div>
+          </div>
+          <div class="row mt-4">
+           
+            <div class="col-6 d-flex ">
+            <p class="text-end"><strong>Personen: {person} <button onClick={calculatorPlus}>+</button> <button onClick={calculatorMinus}>-</button></strong> </p>
+              <p class="text-end"><strong>Zubereitungsdauer: </strong>{preparationTime} min</p>
+            </div>
+          </div>
+        </div>
+        <div class="container mt-4">
+    <div class="row">
+      <div class="col">
+        <table class="table table-striped  border border-opacity-25 rounded table-hover">
+          <thead>
+            <tr>
+              <th  class="p-3">
+                <h4>Menge</h4>
+              </th>
+              <th  class="p-3">
+                <h4>Zutat</h4>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+           
+          {amountCalcMap}
+         
+       
+          
+             
+
+
+
+
+           
+            
+          </tbody>
+  
+        </table>
+      </div>
+    </div>
+
+  </div>
+       
+        </>
     
 
 
 
+      )
+
+
+    }
+
+
+
+
+
+
 
 
 
     
-    
-    
-    
-    const navigate = useNavigate()
     
     
     
@@ -46,7 +226,7 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
        
        
         </div>
-        <button className="btn btn-primary" onClick={() => navigate(-1)}>Home</button>
+        
           <div class="container ">
           <div class="row d-flex justify-content-center m-2 ">
             <div class="col-md-8 col-sm-12 bg-white border border-opacity-25 rounded">
@@ -81,7 +261,8 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
           </div>
           <div class="row mt-4">
            
-            <div class="col-6">
+            <div class="col-6 d-flex ">
+            <p class="text-end"><strong>Personen: {person} <button onClick={calculatorPlus}>+</button> <button onClick={calculatorMinus}>-</button></strong> </p>
               <p class="text-end"><strong>Zubereitungsdauer: </strong>{preparationTime} min</p>
             </div>
           </div>
@@ -101,7 +282,17 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
             </tr>
           </thead>
           <tbody>
-            {zutatsliste}
+         {zutatsliste}
+          
+       
+          
+             
+
+
+
+
+           
+            
           </tbody>
   
         </table>

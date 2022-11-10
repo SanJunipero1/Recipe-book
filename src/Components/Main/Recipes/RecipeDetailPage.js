@@ -48,7 +48,7 @@ export default function RecipeDetailPage(){
         return (
                 <>
                 {recipeArray.filter(  (rezept )=> rezept.sys.id === rezeptParamId ).map((items) =>{
-                   console.log(items)
+                   
                    return (
                     <Layout>
                    <RecipeDetailPageElement key={items.sys.id} title={items.fields.title} preparation={items.fields.preparation}

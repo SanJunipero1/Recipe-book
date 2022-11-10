@@ -1,8 +1,12 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUtensils,faClock } from '@fortawesome/free-solid-svg-icons';
+import * as Icon from 'react-bootstrap-icons';
 
 const logo = <FontAwesomeIcon icon={faUtensils} />
+
+
+
 function Header() {
     return (
       
@@ -19,13 +23,13 @@ function Header() {
                 </ul>
                 <ul className="navbar-nav ms-auto mb-2 mb-md-0">
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="/">Start</a>
+                        <a className="nav-link active" aria-current="page" href="/"><Icon.House/> Start </a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link active" href="/">Kategorie</a>
+                        <a className="nav-link active" href="/"><Icon.CardList/> Kategorie</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link active">Rezept einreichen</a>
+                        <a className="nav-link active"><Icon.PlusSquare/> Rezept einreichen</a>
                     </li>
                     
                 </ul>
