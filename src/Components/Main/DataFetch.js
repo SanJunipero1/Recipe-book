@@ -115,6 +115,7 @@ export default function DataFetch(){
 
     if(searchValue && recipeArray){ 
       return(
+        <Layout>
         <div class="asdasdasdasd">
             <div className="d-flex">   
               {recipeArray.filter(  (rezept )=> rezept.fields.category == searchValue ).map((items) =>{
@@ -125,7 +126,7 @@ export default function DataFetch(){
               })}
             </div>
         </div>
-
+        </Layout>
       )
     }
    // <div style={{height: '500px', backgroundColor: 'black',width: '500px'}}>
@@ -151,7 +152,7 @@ export default function DataFetch(){
     
 
       return (
-        <Layout>
+        <Layout setSearchValue={setSearchValue}>
         <div style={{width: "80%",margin:"auto"}}>
           <Modal open={openModal} onClose={()=>setOpenModal(false)}>
           <h2>Wir wär's damit?</h2>

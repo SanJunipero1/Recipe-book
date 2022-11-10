@@ -24,7 +24,6 @@ function App() {
     <Route index element={<Recipes />} />
       <Route path=":categoryID" element={<Category />} />
     </Route>
-
     </Routes>
       
     </div>
