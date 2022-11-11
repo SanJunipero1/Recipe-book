@@ -179,7 +179,7 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
           <div class="row mt-4">
            
             <div class="col-6 d-flex justify-content-between">
-            <p class="text-end"><strong>Personen: {person} <button className="btn btn-primary m-1 text-light" onClick={calculatorPlus}>+</button> <button className="btn btn-primary m-1 text-light" onClick={calculatorMinus}>-</button></strong> </p>
+            <p class="text-end"><strong>Portionen: {person} <button className="btn btn-primary m-1 text-light" onClick={calculatorPlus}>+</button> <button className="btn btn-primary m-1 text-light" onClick={calculatorMinus}>-</button></strong> </p>
               <p class="text-end"><strong>Zubereitungsdauer: </strong>{preparationTime} min</p>
             </div>
           </div>
@@ -297,7 +297,7 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
           <div class="row mt-4">
            
             <div class="col-6 d-flex justify-content-between">
-            <p class="text-end"><strong>Personen: {person} <button className="btn btn-primary m-1 text-light" onClick={calculatorPlus}>+</button> <button className="btn btn-primary m-1 text-light" onClick={calculatorMinus}>-</button></strong> </p>
+            <p class="text-end"><strong>Portion: {person} <button className="btn btn-primary m-1 text-light" onClick={calculatorPlus}>+</button> <button className="btn btn-primary m-1 text-light" onClick={calculatorMinus}>-</button></strong> </p>
               <p class="text-end"><strong>  Zubereitungsdauer: </strong>{preparationTime} min</p>
             </div>
           </div>
