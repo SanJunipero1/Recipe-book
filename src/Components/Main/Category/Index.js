@@ -9,7 +9,7 @@ export default function Category(){
     
     const categoryVor = "Vorspeisen"
     const categoryHaupt = "Hauptgerichte"
-    const categoryNach = "Nachspeisen"
+    const categoryNach = "Desserts"
     
     const descVor = "Für den kleinen Hunger, den ersten Hunger, oder einfach nur weils lecker ist"
     const descHaupt = "Von ganzen Herzen das Beste vom Besten aus aller Welt für unsere Gäste"
