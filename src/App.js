@@ -1,5 +1,5 @@
 import './App.css';
-
+import "@fontsource/oswald";
 import DataFetch from './Components/Main/DataFetch';
 import Recipes from './Components/Main/Recipes/Index';
 import RecipeDetailPage from './Components/Main/Recipes/RecipeDetailPage';

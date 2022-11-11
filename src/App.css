@@ -49,12 +49,12 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "Oswald";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
-  --bs-body-font-weight: 400;
+  --bs-body-font-weight: 300;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
@@ -1989,7 +1989,7 @@ progress {
   width: 100%;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
@@ -2134,7 +2134,7 @@ textarea.form-control-lg {
   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
   -moz-padding-start: calc(0.75rem - 3px);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
@@ -2499,7 +2499,7 @@ textarea.form-control-lg {
   align-items: center;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   color: #212529;
   text-align: center;
@@ -2742,7 +2742,7 @@ textarea.form-control-lg {
   --bs-btn-padding-y: 0.375rem;
   --bs-btn-font-family: ;
   --bs-btn-font-size: 1rem;
-  --bs-btn-font-weight: 400;
+  --bs-btn-font-weight: 300;
   --bs-btn-line-height: 1.5;
   --bs-btn-color: #212529;
   --bs-btn-bg: transparent;
@@ -3092,7 +3092,7 @@ textarea.form-control-lg {
 }
 
 .btn-link {
-  --bs-btn-font-weight: 400;
+  --bs-btn-font-weight: 300;
   --bs-btn-color: var(--bs-link-color);
   --bs-btn-bg: transparent;
   --bs-btn-border-color: transparent;
@@ -3425,7 +3425,7 @@ textarea.form-control-lg {
   width: 100%;
   padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
   clear: both;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--bs-dropdown-link-color);
   text-align: inherit;
   white-space: nowrap;
@@ -5544,7 +5544,7 @@ textarea.form-control-lg {
   margin: var(--bs-tooltip-margin);
   font-family: var(--bs-font-sans-serif);
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   text-align: left;
   text-align: start;
@@ -5654,7 +5654,7 @@ textarea.form-control-lg {
   max-width: var(--bs-popover-max-width);
   font-family: var(--bs-font-sans-serif);
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   text-align: left;
   text-align: start;
@@ -7959,7 +7959,7 @@ textarea.form-control-lg {
 }
 
 .fw-normal {
-  font-weight: 400 !important;
+  font-weight: 300 !important;
 }
 
 .fw-bold {
@@ -10838,6 +10838,7 @@ textarea.form-control-lg {
 
 .frontpage-receipe-category {
   margin-top: 1rem;
+  margin-bottom: 4rem;
 }
 .frontpage-receipe-category img {
   width: 100%;
@@ -10845,7 +10846,17 @@ textarea.form-control-lg {
   border-radius: 4px;
   margin-bottom: 1rem;
 }
+.frontpage-receipe-category .category-description {
+  min-height: 72px;
+}
 
+.receipe-overview {
+  margin-bottom: 100px;
+}
+
+.receipe-card {
+  margin-bottom: 40px;
+}
 .receipe-card h3, .receipe-card .h3 {
   font-size: 1.125rem;
   margin-top: 20px;
@@ -10853,10 +10864,10 @@ textarea.form-control-lg {
 }
 .receipe-card h2, .receipe-card .h2 {
   font-size: 1.25rem;
-  min-height: 48px;
+  min-height: 72px;
 }
 .receipe-card .receipe-description {
-  min-height: 30px;
+  min-height: 120px;
 }
 
 #shuffle-receipe {
@@ -10870,49 +10881,53 @@ textarea.form-control-lg {
   margin-top: -3px;
 }
 
-body:after {
-  content: "";
-  width: 90px;
-  height: 90px;
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  border-radius: 10px;
-  text-align: center;
-  vertical-align: middle;
-  padding-top: 1.125rem;
-  font-size: 2rem;
-  color: #343a40;
-  font-weight: bold;
+/* body:after {
+    content: "";
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 1.125rem;
+    font-size: 2rem;
+    color: $gray-800;
+    font-weight: bold;
 }
 
-@media (min-width: 576px) {
-  body:after {
-    background: red;
-    content: "SM";
-  }
+@include media-breakpoint-up(sm) {
+    body:after {
+        background: red;
+        content: "SM"
+    }
 }
-@media (min-width: 768px) {
-  body:after {
-    background: green;
-    content: "MD";
-  }
+
+@include media-breakpoint-up(md) {
+    body:after {
+        background: green;
+        content: "MD"
+    }
 }
-@media (min-width: 992px) {
-  body:after {
-    background: yellow;
-    content: "LG";
-  }
+
+@include media-breakpoint-up(lg) {
+    body:after {
+        background: yellow;
+        content: "LG"
+    }
 }
-@media (min-width: 1200px) {
-  body:after {
-    background: blueviolet;
-    content: "XL";
-  }
+
+@include media-breakpoint-up(xl) {
+    body:after {
+        background: blueviolet;
+        content: "XL"
+    }
 }
-@media (min-width: 1400px) {
-  body:after {
-    background: aqua;
-    content: "XXL";
-  }
-}
+
+@include media-breakpoint-up(xxl) {
+    body:after {
+        background: aqua;
+        content: "XXL"
+    }
+} */

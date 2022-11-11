@@ -20,7 +20,7 @@ function index() {
         <h5>FAQ & Service</h5>
         <ul class="nav flex-column ">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Häufig gestellte Fragen</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Placeholder</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Warum sind wir so geil?</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Fanpaket</a></li>
         </ul>
       </div>
