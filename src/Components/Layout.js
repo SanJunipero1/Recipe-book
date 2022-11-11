@@ -2,6 +2,7 @@ import Header from "./Header/Index"
 import Footer from "./Footer/Index"
 import Search from "./Search/Search"
 import Breadcrumbs from "./Breadcrumbs/Index"
+import TopButton from "./Main/TopButton"
 
 export default function Layout ({children,setSearchValue}){
 
@@ -11,6 +12,7 @@ export default function Layout ({children,setSearchValue}){
         <Search setSearchValue={setSearchValue}/>
         <Breadcrumbs/>
         {children}
+        <TopButton/>
         <Footer/>
         </>
     )

@@ -7,7 +7,7 @@ export default function ElementCategory({image,category,description,link}){
 			<img src={image} class="category-receipe-image rounded" alt="Category image"/>
 			<h2>{category}</h2>
 			<p className="card-text">{description}</p>
-			<a href={link} className="btn btn-primary text-light">Zu den {category}</a>
+			<a href={link} className="btn btn-primary text-light">Zeige {category}</a>
 		</div>
 	)
 }

@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Modal from "./Recipes/Modal";
 import ModalElement from "./Recipes/ModalElement";
 import Layout from "../Layout";
+import * as Icon from 'react-bootstrap-icons';
 
 
 
@@ -184,6 +185,7 @@ export default function DataFetch(){
             </Modal>
 		      </div>
       </div>
+  
     </Layout>
       )
 

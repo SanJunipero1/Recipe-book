@@ -8,20 +8,61 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
   const navigate = useNavigate()
     const [person,setPerson]=useState(1)
     const [amountCalc,setCalcAmount]=useState([])
+    const [amountPerson,setAmountPerson] = useState([])
     const desc =preparation.content[0].content[0].value
     const amount=[]
-
-
-
-
     
+  useEffect(()=>{
+    setAmountPerson( amount.map(function(x) { return x / 4  ; }))
+  },[])
+   
+  console.log(amountPerson)
+
+  
     
   
+  
+  if (amountPerson && ingredients){
+  const unit = amountPerson.map(item=>({...item, item}))
+
+ 
+
+  const ingAndAmount = ingredients.map((value,index)=>{
+   const amountIndex = unit[index];
+   console.log(amountIndex)
+    return(
+
+      <tr>     
+     <td class="p-3"> {amountIndex} {value.fields.unit}</td>
+        <td>{value.fields.ingredient}</td>
+      </tr>
+
+   )
+
+
+
+  })
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
   
     
     function calculatorPlus(){
       setPerson(zahl=> zahl+1)
-      setCalcAmount( amount.map(function(x) { return x * (person +1 ); }))
+      setCalcAmount( amount.map(function(x) { return x * (person +1) ; }))
      
       
       
@@ -45,10 +86,10 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
 
    const zutatsliste = ingredients.map((item)=>{
     amount.push(item.fields.amount)
-
+   
+    console.log(item.fields.amount)
 
     return <tr>
-            
       <td class="p-3"> {item.fields.amount} {item.fields.unit}</td>
          <td>{item.fields.ingredient}</td>
        </tr>
@@ -56,13 +97,14 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
     })
 
 
- 
-
     
 
 
     
    
+   
+      
+     
 
     
 
@@ -71,14 +113,14 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
 
 
 
-    if(person > 1 && amount){
+    if(person  > 1 && amountCalc){
       const unit = amountCalc.map(item=>({...item, item}))
 
 
 
       const ingAndAmount = ingredients.map((value,index)=>{
         const amountIndex = unit[index].item;
-        console.log(amountIndex)
+       
         return(
     
           <tr>     
@@ -92,7 +134,7 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
     
       })
     
-      console.log( unit)
+
       
       return(
         <>
@@ -197,11 +239,21 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
 
     
     
+
+
     
     
     
     
-    return(
+    
+    
+    
+    
+    
+    
+    
+    
+      return(
        
         <>
         <div>
@@ -287,5 +339,8 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
         </>
     
     
-     )
+ 
+    )
+  
+    
 }

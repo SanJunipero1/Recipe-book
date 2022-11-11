@@ -1,10 +1,11 @@
 import React from "react";
 import ElementCategory from "./ElementCategory";
 
+
 export default function Category(){
-    const imageVor = "https://images.ctfassets.net/bdt0zj1w66uy/5HybtBr1ToTLyYxZ49NwdA/df3c3d1a88f83b25b5c958edb4646e75/serghei-savchiuc-Ic0E0y6Zo20-unsplash.jpg"
-    const imageHaupt = "https://images.ctfassets.net/bdt0zj1w66uy/5HybtBr1ToTLyYxZ49NwdA/df3c3d1a88f83b25b5c958edb4646e75/serghei-savchiuc-Ic0E0y6Zo20-unsplash.jpg"
-    const imageNach = "https://images.ctfassets.net/bdt0zj1w66uy/5HybtBr1ToTLyYxZ49NwdA/df3c3d1a88f83b25b5c958edb4646e75/serghei-savchiuc-Ic0E0y6Zo20-unsplash.jpg"
+    const imageVor = "https://images.ctfassets.net/bdt0zj1w66uy/3qDt1gCkVj3oAyd3Sf1VSQ/091b71ad81a79f231972d1861fb89aff/7e9d2fcc42ca87980d3bcaf532dbcf3d_4_153784.jpeg?h=250"
+    const imageHaupt = "https://images.ctfassets.net/bdt0zj1w66uy/3OFF29a5l1ov3qZtHFlTV4/8140190f64f820937dd41294abb5f50f/braten-t.jpg?h=250"
+    const imageNach = "https://images.ctfassets.net/bdt0zj1w66uy/1NvJhrIeVWsAGCLSaEcCpz/78ecfd3fc2f51783b5db357fc3f86d95/panna-cotta-t.jpg?h=250"
     
     const categoryVor = "Vorspeisen"
     const categoryHaupt = "Hauptgerichte"
