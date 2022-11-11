@@ -10,12 +10,21 @@
 
 .frontpage-receipe-category {
     margin-top: 1rem;
+    margin-bottom: 4rem;
     img {
         width: 100%;
         height: auto;
         border-radius: 4px;
         margin-bottom: 1rem;
     }
+
+    .category-description {
+        min-height: 72px;
+    }
+}
+
+.receipe-overview{
+    margin-bottom: 100px;
 }
 
 .receipe-card{
@@ -27,12 +36,12 @@
 
     h2{
         font-size: 1.25rem;
-        min-height: 48px;
+        min-height: 72px;
     }
     .receipe-description {
-        min-height: 55px;
+        min-height: 120px;
     }
-
+    margin-bottom: 40px;
 }
 
 #shuffle-receipe {

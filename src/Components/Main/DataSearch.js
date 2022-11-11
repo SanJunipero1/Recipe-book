@@ -13,9 +13,12 @@ export default function DataSearch({rezepte}){
     
     
    return(
-   <div className="row">
-     {dataMap}
-   </div>
+   <>
+      <h3 className="receipe-overview">Rezepte</h3>
+      <div className="row">
+      {dataMap}
+      </div>
+   </>
 
     )
 }
