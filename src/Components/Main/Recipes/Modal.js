@@ -9,7 +9,7 @@ export default function Modal ({open,children,onClose}){
     const Modal_Style={
         
         position: 'fixed',
-        top:'10%',
+        top:'5%',
         left:'40%',
         tranform: 'translate(-50%, -50%)',
         backgroundColor: '#fff',

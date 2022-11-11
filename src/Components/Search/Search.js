@@ -32,7 +32,12 @@ export default function Search ({setSearchValue}){
                     </div>
                 </div>
             </div>
+            <button type="button" onClick={runSearch} className="btn btn-primary">
+                <i className="fas fa-search"></i>
+            </button>
         </div>
+       
+                   
     )
 }
 

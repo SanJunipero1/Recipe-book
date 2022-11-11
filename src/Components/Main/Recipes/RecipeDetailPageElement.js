@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 
-import Layout from "../../Layout";
+
 
 export default function RecipeDetailPageElement({title,preparation,image,ingredients,preparationTime}){
     
@@ -10,9 +10,6 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
     const [amountCalc,setCalcAmount]=useState([])
     const desc =preparation.content[0].content[0].value
     const amount=[]
-    const ingCalc = []
-    const ingX =[]
-    const ingredientsOb=[]
 
 
 
@@ -41,16 +38,12 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
     }
 
 
-    const amountCalcMap = amountCalc.map((item)=>{
-      return <p>{item}</p>
-    })
+
 
  
 
 
    const zutatsliste = ingredients.map((item)=>{
-    ingX.push(item.fields.unit)
-    ingredientsOb.push(item.fields.ingredient)
     amount.push(item.fields.amount)
 
 
@@ -59,48 +52,19 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
       <td class="p-3"> {item.fields.amount} {item.fields.unit}</td>
          <td>{item.fields.ingredient}</td>
        </tr>
-              
-             
-            
-            
-   
- 
-      
+
     })
 
-    const calcobject =Object.assign({}, amountCalc)
-    const ingobject = Object.assign({}, ingX)
-    const ingobject2 = Object.assign({}, ingredientsOb)
-    
 
-    ingCalc.push(calcobject)
-    ingCalc.push(ingobject)
-    ingCalc.push(ingobject2)
+ 
 
     
-    
-    console.log(ingredients)
-    console.log(ingCalc)
-  const unit = ingCalc.map((item,index)=>{
-            
-    return(    
-        <tr className="">
-     <td className="p-3 ">{item[0]}</td>
-
-
-    </tr>
-      ) 
-   
-  })
-
-
-
 
 
     
    
 
-
+    
 
 
 
@@ -108,8 +72,27 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
 
 
     if(person > 1 && amount){
+      const unit = amountCalc.map(item=>({...item, item}))
 
-      
+
+
+      const ingAndAmount = ingredients.map((value,index)=>{
+        const amountIndex = unit[index].item;
+        console.log(amountIndex)
+        return(
+    
+          <tr>     
+          <td class="p-3"> {amountIndex} {value.fields.unit}</td>
+             <td>{value.fields.ingredient}</td>
+           </tr>
+    
+        )
+    
+    
+    
+      })
+    
+      console.log( unit)
       
       return(
         <>
@@ -145,7 +128,7 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
           <div class="row">
             <div class="col border border-opacity-25 rounded p-4 bg-white">
               <p>
-          
+              {desc}
               </p>
       
               
@@ -153,8 +136,8 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
           </div>
           <div class="row mt-4">
            
-            <div class="col-6 d-flex ">
-            <p class="text-end"><strong>Personen: {person} <button onClick={calculatorPlus}>+</button> <button onClick={calculatorMinus}>-</button></strong> </p>
+            <div class="col-6 d-flex justify-content-between">
+            <p class="text-end"><strong>Personen: {person} <button className="btn btn-primary m-1 text-light" onClick={calculatorPlus}>+</button> <button className="btn btn-primary m-1 text-light" onClick={calculatorMinus}>-</button></strong> </p>
               <p class="text-end"><strong>Zubereitungsdauer: </strong>{preparationTime} min</p>
             </div>
           </div>
@@ -175,7 +158,7 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
           </thead>
           <tbody>
            
-          {amountCalcMap}
+          {ingAndAmount}
          
        
           
@@ -253,7 +236,7 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
           <div class="row">
             <div class="col border border-opacity-25 rounded p-4 bg-white">
               <p>
-           {desc}
+            {desc}
               </p>
       
               
@@ -261,9 +244,9 @@ export default function RecipeDetailPageElement({title,preparation,image,ingredi
           </div>
           <div class="row mt-4">
            
-            <div class="col-6 d-flex ">
-            <p class="text-end"><strong>Personen: {person} <button onClick={calculatorPlus}>+</button> <button onClick={calculatorMinus}>-</button></strong> </p>
-              <p class="text-end"><strong>Zubereitungsdauer: </strong>{preparationTime} min</p>
+            <div class="col-6 d-flex justify-content-between">
+            <p class="text-end"><strong>Personen: {person} <button className="btn btn-primary m-1 text-light" onClick={calculatorPlus}>+</button> <button className="btn btn-primary m-1 text-light" onClick={calculatorMinus}>-</button></strong> </p>
+              <p class="text-end"><strong>  Zubereitungsdauer: </strong>{preparationTime} min</p>
             </div>
           </div>
         </div>

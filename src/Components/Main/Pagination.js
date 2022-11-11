@@ -10,7 +10,7 @@ export default function Pagination({totalPosts, postsPerPage,setCurrentPage}){
 
     
     return(
-        <div className="m-auto">
+        <div className="col text-center my-5">
         {
             pages.map((page,index) =>{
                 return <button className="btn btn-primary m-1 text-light" onClick={()=>setCurrentPage(page)} key={index}>{page}</button>

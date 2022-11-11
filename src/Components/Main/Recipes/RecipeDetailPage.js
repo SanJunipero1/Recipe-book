@@ -53,7 +53,7 @@ export default function RecipeDetailPage(){
                     <Layout>
                    <RecipeDetailPageElement key={items.sys.id} title={items.fields.title} preparation={items.fields.preparation}
                    image={items.fields.headerImage.fields.file.url} preparationTime={items.fields.preparationTime} 
-                   ingredients={items.fields.Ingredients}/>
+                   ingredients={items.fields.Ingredients} rating={items.fields.rating}/>
                       </Layout>
                     );
                 })}
