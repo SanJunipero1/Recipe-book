@@ -45,7 +45,7 @@ export default function DataFetch(){
     }
     
 
-    //<Modal open={openModal} random={random} recipeArray={recipeArray}/>
+
    
 
    
@@ -79,33 +79,7 @@ export default function DataFetch(){
     }
 
 
-    //<Element key={recipeArray[random2].sys.id} title={recipeArray[random2].fields.title} rating={recipeArray[random2].fields.rating} image={recipeArray[random2].fields.headerImage.fields.file.url} 
-    //preparationTime={recipeArray[random2].fields.preparationTime} description={recipeArray[random2].fields.description}    category={recipeArray[random2].fields.category}  id={recipeArray[random2].sys.id}/>
 
-
-
- 
-   // if(random){
-
-    //  const lastPostIndex= currentPage * postsPerPage
-   //   const firstPostIndex = lastPostIndex - postsPerPage
-   //   const currentPosts =  recipeArray.slice(firstPostIndex,lastPostIndex)
-   //   return(
-   ///    <div>
-   //     <Search setSearchValue={setSearchValue}/>
-   //    <Category/>
-    //   <DataSearch rezepte={currentPosts} />
-    //   <Pagination totalPosts={recipeArray.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage}/>
-    //      <div >
-   //   <Element key={recipeArray[random].sys.id} title={recipeArray[random].fields.title} rating={recipeArray[random].fields.rating} image={recipeArray[random].fields.headerImage.fields.file.url} 
-   //  preparationTime={recipeArray[random].fields.preparationTime} description={recipeArray[random].fields.description}    category={recipeArray[random].fields.category}  id={recipeArray[random].sys.id}/>
-       
-   //    </div>
-    
-   // <button className="btn btn-primary " onClick={zufall}>Zufallsrezept</button>
-   //     </div>
-    // )
-    // }
 
 
      
@@ -130,14 +104,6 @@ export default function DataFetch(){
         </Layout>
       )
     }
-   // <div style={{height: '500px', backgroundColor: 'black',width: '500px'}}>
-   // <Element key={recipeArray[random].sys.id} title={recipeArray[random].fields.title} rating={recipeArray[random].fields.rating} image={recipeArray[random].fields.headerImage.fields.file.url} 
-   // preparationTime={recipeArray[random].fields.preparationTime} description={recipeArray[random].fields.description}    category={recipeArray[random].fields.category}  id={recipeArray[random].sys.id}/>
-  // </div>
-
-
-//<button className="btn btn-primary " onClick={zufall}>Zufallsrezept</button>    
-  
 
 
 
