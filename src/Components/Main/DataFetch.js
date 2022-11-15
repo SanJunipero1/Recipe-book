@@ -20,13 +20,13 @@ export default function DataFetch(){
     const [currentPage,setCurrentPage] =useState(1)
     const [postsPerPage,setPostsPerPage] = useState(4)
     const [random,setRandom]=useState(0)
-    const [random2,setRandom2]=useState()
+   
 
     const [openModal,setOpenModal]= useState(false)
    
 
 
-    // console.log(searchValue)
+
 
 
     function fetchRecipes(){
@@ -63,10 +63,8 @@ export default function DataFetch(){
     function zufall(){
       setOpenModal(true)
       const randomRecipe =  Math.floor(Math.random() * recipeArray.length)
-      const randomRecipe2 =  Math.floor(Math.random() * recipeArray.length)
-     console.log(recipeArray[randomRecipe].fields.title)
      setRandom(randomRecipe)
-     setRandom2(randomRecipe2)
+    
    
     }
 
@@ -92,14 +90,21 @@ export default function DataFetch(){
       return(
         <Layout>
         
-            <div className="row">   
-              {recipeArray.filter(  (rezept )=> rezept.fields.category == searchValue ).map((items) =>{
+            <div className="row">  
+           
+              {recipeArray.filter(  (rezept )=> rezept.fields.category == searchValue || rezept.fields.title == searchValue).map((items) =>{
+               
+                
                 return (
                   <Element  key={items.sys.id} title={items.fields.title} rating={items.fields.rating} image={items.fields.headerImage.fields.file.url} 
                   preparationTime={items.fields.preparationTime} description={items.fields.description}    category={items.fields.category}  id={items.sys.id}/>  
                 );
+            
+        
+          
+              
               })}
-            </div>
+        </div>
         
         </Layout>
       )

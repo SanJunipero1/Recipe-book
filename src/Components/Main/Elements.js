@@ -12,9 +12,12 @@ export default function Element({title,rating,image,preparationTime,description,
   const starIcon = <FontAwesomeIcon icon={faStar} style={{color:"#DEE13A"}}/>
   const timeIcon =<FontAwesomeIcon icon={faClock} />
   let starNumber= []
+  console.log( rating)
+  console.log( starNumber)
     
   for(let i = 0; i < rating; i++){
     starNumber.push(i)
+    
   }
   
  
