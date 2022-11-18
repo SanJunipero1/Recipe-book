@@ -12,7 +12,7 @@ function Header() {
       
         <nav className="navbar navbar-expand-md navbar-dark bg-primary" aria-label="Fourth navbar example">
             <div className="container-md">
-            <a className="navbar-brand" href="/">{logo}</a>
+            <a className="navbar-brand" href="/">{logo}&nbsp;MyDailyReceipe</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>

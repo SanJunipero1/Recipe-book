@@ -23,11 +23,8 @@
     }
 }
 
-.receipe-overview{
-    margin-bottom: 100px;
-}
-
 .receipe-card{
+    margin-bottom: 80px;
     h3 {
         font-size: 1.125rem;
         margin-top: 20px;
@@ -41,12 +38,12 @@
     .receipe-description {
         min-height: 120px;
     }
-    margin-bottom: 40px;
 }
 
 #shuffle-receipe {
-    position: absolute;
+    position: fixed;
     right: 30px;
+    bottom: 30px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -55,3 +52,39 @@
     }
 }
 
+footer {
+    position: relative;
+    h4 {
+        margin-bottom: 2rem;
+    }
+}
+
+#quality-batch-wrapper {
+    text-align: center;
+    background: url('./static/images/Quality.png') 10px -10px no-repeat;
+    background-size: contain;
+    width: 80%;
+    height: 80%;
+    margin-top: -1rem;
+}
+
+#quality-batch {
+    
+}
+
+#quality-batch-text {
+    color: $gray-900;
+    z-index: 10;
+    width: 84px;
+    transform: translate(55px, 58px);
+    font-weight: 600;
+    span {
+        display: block;
+    }
+    span:first-of-type {
+
+    }
+    span:last-of-type {
+
+    }
+}

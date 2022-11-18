@@ -1,66 +1,75 @@
 import React from 'react'
 
 function index() {
-  return (
-<div class=" bg-dark ">
-  <footer class="py-5 container ">
-    <div class="row">
-      <div class="col-6 col-md-2 mb-3 text-light">
-        <h5>Rechtliches</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Datenschutzvereinbarung</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Cookie-Richtlinien</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Nutzungsbedingungen</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Impressum</a></li>
-          
-        </ul>
-      </div>
+	return (
+		<footer className="bg-dark py-5 mt-5">
 
-      <div class="col-6 col-md-2 mb-3 text-light">
-        <h5>FAQ & Service</h5>
-        <ul class="nav flex-column ">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Häufig gestellte Fragen</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Warum sind wir so geil?</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Fanpaket</a></li>
-        </ul>
-      </div>
+			<div className="container">
+				{/* Footer Reihe: Aufteilung: 2 + 2 + 2 + 3 + 3 = 12 */}
+				<div className="row">
+					{/* Erste Reihe */}
+					<div className="col-sm-12 col-md-2 mb-3 text-light">
+						<h4>Rechtliches</h4>
+						<ul className="nav flex-column">
+							<li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-light">Datenschutzvereinbarung</a></li>
+							<li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-light">Cookie-Richtlinien</a></li>
+							<li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-light">Nutzungsbedingungen</a></li>
+							<li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-light">Impressum</a></li>
+						</ul>
+					</div>
 
-      <div class="col-6 col-md-2 mb-3 text-light">
-        <h5>Lob & Kritik</h5>
-        <ul class="nav flex-column ">
-          <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-light ">Rezeptkritik</a></li>
-          <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-light">Verbesserungsvorschlaege</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Commmunity</a></li>
-        
-        </ul>
-      </div>
- 
+					<div className="col-sm-12 col-md-2 mb-3 text-light">
+						<h4>FAQ & Service</h4>
+						<ul className="nav flex-column ">
+							<li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-light">Häufig gestellte Fragen</a></li>
+							<li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-light">Warum sind wir so geil?</a></li>
+							<li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-light">Fanpaket</a></li>
+						</ul>
+					</div>
 
-      <div class="col-md-5 offset-md-1 mb-3 text-light ">
-        <form>
-          <h5>Newsletter</h5>
-        
-          <div class=" w-50">
-          <label for="newsletter1" class="visually-hidden ">Dein Name</label>
-            <input id="newsletter1" type="text" class="form-control" placeholder="Dein Name"/>
-            <label for="newsletter1" class="visually-hidden ">E-Mail Adresse</label>
-            <input id="newsletter1" type="text" class="form-control mt-3" placeholder="E-Mail Adresse"/>
-            <button class="btn btn-dark border-primary w-100 mt-3" type="button">Newsletter abonnieren</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top text-light">
-      <p className='m-auto'>Alle Rechte vorbehalten. MyDailyRecipe © 2022</p>
-      <ul class="list-unstyled d-flex">
-        
-      </ul>
-    </div>
-  </footer>
-</div>
-
-  )
+					<div className="col-sm-12 col-md-2 mb-3 text-light">
+						<h4>Lob & Kritik</h4>
+						<ul className="nav flex-column">
+							<li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-light">Rezeptkritik</a></li>
+							<li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-light">Verbesserungsvorschlaege</a></li>
+							<li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-light">Commmunity</a></li>
+						</ul>
+					</div>
+					<div className="col-sm-12 col-md-3 mb-3 text-light">
+						<h4>Unser Versprechen</h4>
+						<div id="quality-batch-wrapper">
+							<p id="quality-batch-text"><span>100%</span><span>Quality</span></p>
+						</div>
+					</div>
+					<div className="col-sm-12 col-md-3 mb-3 text-light">
+						<h4>Newsletter</h4>
+						<form>
+							<div className="mb-4">
+								<label for="customer-name" className="form-label visually-hidden">Dein Name</label>
+								<input type="text" className="form-control" id="customer-name" placeholder="Dein Name" aria-describedby="customer-name-help" />
+								<div id="customer-name-help" className="form-text text-light visually-hidden">We'll never share your email with anyone else.</div>
+							</div>
+							<div className="mb-4">
+								<label for="customer-email" className="form-label visually-hidden">Password</label>
+								<input type="password" className="form-control" placeholder="Deine E-Mail" id="customer-email" />
+							</div>
+							<button type="submit" className="btn btn-outline-primary w-100">Subscribe</button>
+						</form>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col py-1">
+						<hr style={{color:"white"}} />
+					</div>
+				</div>
+				<div className="row mt-4">
+					<div className="col text-center">
+						<p className="text-light mb-0">All rights reserved. MyDailyReceipe &copy; 2022.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	)
 }
 
 export default index

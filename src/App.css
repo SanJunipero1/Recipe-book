@@ -10850,12 +10850,8 @@ textarea.form-control-lg {
   min-height: 72px;
 }
 
-.receipe-overview {
-  margin-bottom: 100px;
-}
-
 .receipe-card {
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 .receipe-card h3, .receipe-card .h3 {
   font-size: 1.125rem;
@@ -10871,8 +10867,9 @@ textarea.form-control-lg {
 }
 
 #shuffle-receipe {
-  position: absolute;
+  position: fixed;
   right: 30px;
+  bottom: 30px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -10881,6 +10878,32 @@ textarea.form-control-lg {
   margin-top: -3px;
 }
 
+footer {
+  position: relative;
+}
+footer h4, footer .h4 {
+  margin-bottom: 2rem;
+}
+
+#quality-batch-wrapper {
+  text-align: center;
+  background: url("./static/images/Quality.png") 10px -10px no-repeat;
+  background-size: contain;
+  width: 80%;
+  height: 80%;
+  margin-top: -1rem;
+}
+
+#quality-batch-text {
+  color: #212529;
+  z-index: 10;
+  width: 84px;
+  transform: translate(55px, 58px);
+  font-weight: 600;
+}
+#quality-batch-text span {
+  display: block;
+}
 /* body:after {
     content: "";
     width: 90px;

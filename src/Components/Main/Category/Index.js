@@ -14,17 +14,10 @@ export default function Category(){
     const descVor = "Für den kleinen Hunger, den ersten Hunger, oder einfach nur weils lecker ist"
     const descHaupt = "Von ganzen Herzen das Beste vom Besten aus aller Welt für unsere Gäste"
     const descNach = "Süßes für den Hunger danach - aka Hüftgold"
-    
 
-    
     const linkH = "/category/Hauptgerichte"
     const linkV =  "/category/Vorspeisen"
     const linkN =   "/category/Desserts"
-
-    
-
-
-
 
     return(
         <>

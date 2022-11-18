@@ -3,9 +3,7 @@ import { client } from "../../client";
 import DataSearch from "./DataSearch";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
 import { faStar,faClock } from '@fortawesome/free-solid-svg-icons';
-
 
 export default function Element({title,rating,image,preparationTime,description,category,id}){
     
@@ -17,15 +15,11 @@ export default function Element({title,rating,image,preparationTime,description,
     
   for(let i = 0; i < rating; i++){
     starNumber.push(i)
-    
   }
   
- 
   const star = starNumber.map((stern)=>{
   return starIcon
   })
-
-
 
   const rezeptImage = `https:${image})`
   const linkId= `/recipes/${id}`
@@ -46,10 +40,5 @@ export default function Element({title,rating,image,preparationTime,description,
               </div>
           </div>
       </div>
-
-   
-
     )
-
-
 }

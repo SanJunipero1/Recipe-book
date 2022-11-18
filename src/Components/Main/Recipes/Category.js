@@ -7,14 +7,8 @@ import RecipeDetailPageElement from "./RecipeDetailPageElement";
 import Element from "../Elements";
 import Layout from "../../Layout";
 
-
-
 export default function Category(){
     const navigate = useNavigate()
-    
-    
-
-
 
     const rezeptParam = useParams()
     const [rezepte,setRezepte] = useState([])
@@ -28,35 +22,26 @@ export default function Category(){
  
        const recipefield = entry.items
          
-         setRezepte({
-             recipefield
-         })
-         })
-     
+        setRezepte({
+            recipefield
+            })
+        })
      }
      
  
-      useEffect(()=>{
+    useEffect(()=>{
         fetchRecipes()
          
      },[])
 
      const rezeptParamId =rezeptParam.categoryID
-
-
      const recipeArray = rezepte.recipefield
-     
-     
-     
-     
      console.log(recipeArray)
-     
-     
-     
      if(recipeArray){
         return (
                 <Layout>
-                    <h1>{rezeptParamId}</h1>
+                    <div className="container">
+                    <div className="row"><div className="col"><h1 className="mb-4">{rezeptParamId}</h1></div></div>
                 <div className="row ">
                     
                 {recipeArray.filter(  (rezept )=> rezept.fields.category == rezeptParamId ).map((items) =>{
@@ -69,6 +54,7 @@ export default function Category(){
                     
                    );
                 })}
+            </div>
             </div>
             </Layout>
           )
